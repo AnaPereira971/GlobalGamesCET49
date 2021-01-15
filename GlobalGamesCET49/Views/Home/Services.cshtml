@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Services";
+}
+
+
+<section id="main">
+    <div class="container">
+        <article id="main-col">
+            <h1 class="title">Services</h1>
+
+            <ul id="services">
+                <li>
+                    <h3>Unity Games</h3>
+                    <p>Quisque et massa arcu. Etiam et auctor ex. Donec et erat lobortis, ultrices velit et, molestie nisl. Phasellus sed interdum magna, non tincidunt dolor. Donec suscipit diam ex, at vestibulum erat auctor eget.</p>
+                    <p>Price: Since 35&euro;</p>
+                </li>
+
+                <li>
+                    <h3>Unreal Games</h3>
+                    <p>Pellentesque justo quam, tristique et ultrices ultricies, accumsan eget mauris. Pellentesque gravida, tortor vel varius elementum, velit neque convallis nisi, ut molestie odio ligula eu purus.</p>
+                    <p>Price: Since 75&euro;</p>
+                </li>
+
+                <li>
+                    <h3>Scenaries and Characters builder</h3>
+                    <p>Etiam id purus nisl. Mauris non finibus urna, suscipit scelerisque tortor. Etiam finibus molestie sem quis convallis. Sed hendrerit mollis erat at dictum. Morbi et lectus metus.</p>
+                    <p>Price: Since 120&euro;</p>
+                </li>
+            </ul>
+        </article>
+
+        <aside id="sidebar">
+            <div class="dark">
+                <h3>Request a budget</h3>
+                <form class="budget">
+                    <div>
+                        <label>Name</label><br>
+                        <input type="text" placeholder="Write your name"/>
+                    </div>
+
+                    <div>
+                        <label>Email</label><br>
+                        <input type="email" placeholder="Insert your email"/>
+                    </div>
+
+                    <div>
+                        <label>Message</label><br>
+                        <textarea placeholder="Leave your message"></textarea>
+                    </div>
+
+                    <button class="button_1" type="submit">Submit</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+</section>
+
+@section Scripts{
+    <script type="text/javascript">
+        document.querySelector('#services').className = 'selecionado';
+    </script>
+}

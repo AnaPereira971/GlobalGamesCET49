@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="desenvolvimento de jogos e realidade virtual">
+    <meta name="Keywords" content="realidade virtual, criamos jogos, desenvolvemos jogos">
+    <title>GlobalGamesCET49 | @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+
+<body>
+
+    <header>
+        <div class="container">
+            <div id="logo">
+                <h1><span class="spotlight">Global</span> Games Enterprise</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li id="home"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li id="about"><a asp-controller="Home" asp-action="About">About</a></li>
+                    <li id="services"><a asp-controller="Home" asp-action="Services">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="showcase">
+        <div class="container">
+            <h1>The best virtual reality platform</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a eros elit. Suspendisse ultricies vulputate velit, at vestibulum lacus aliquet id. Sed non lorem non est euismod bibendum.</p>
+        </div>
+    </section>
+
+    <partial name="_Newsletter" />
+
+
+
+    @RenderBody()
+
+    <footer>
+        <p>Global GamesCET49, Copyright &copy; @DateTime.Now.Year</p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>
+
