@@ -1,4 +1,6 @@
-﻿@{
+﻿@model GlobalGamesCET49.Data.Enteties.Contact
+
+@{
     ViewData["Title"] = "Services";
 }
 
@@ -32,6 +34,8 @@
         <aside id="sidebar">
             <div class="dark">
                 <h3>Request a budget</h3>
+                @*
+                // Consultar Razor-pages https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/page?view=aspnetcore-2.1&tabs=visual-studio
                 <form class="budget">
                     <div>
                         <label>Name</label><br>
@@ -47,6 +51,28 @@
                         <label>Message</label><br>
                         <textarea placeholder="Leave your message"></textarea>
                     </div>
+                </form>
+                *@
+
+                <form class="budget" asp-action="services">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="text-danger">
+                        <label asp-for="FirstName">Name</label><br>
+                        <input type="text" placeholder="Write your first and last name" class="text-danger" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Email">Email</label><br>
+                        <input type="text" placeholder="Insert your email" class="text-danger" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Message">Message</label><br>
+                        <textarea placeholder="Leave your message" asp-for="Message"></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+
 
                     <button class="button_1" type="submit">Submit</button>
                 </form>

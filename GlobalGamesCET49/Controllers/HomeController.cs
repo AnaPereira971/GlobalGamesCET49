@@ -1,4 +1,6 @@
-﻿using GlobalGamesCET49.Models;
+﻿using GlobalGamesCET49.Data;
+using GlobalGamesCET49.Data.Enteties;
+using GlobalGamesCET49.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,13 @@ namespace GlobalGamesCET49.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DataContext _context;
+
+        public HomeController(DataContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -27,6 +36,23 @@ namespace GlobalGamesCET49.Controllers
         
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        // POST: Contacts/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // O atributo ValidateAntiForgeryToken ajuda a evitar ataques de falsificação de solicitação entre sites  e requer uma instrução Html.AntiForgeryToken () 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Services([Bind("Id,FirstName,LastName, Adress, City, PhoneNumber, Email,Message")] Contact contacts)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(contacts);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
             return View();
         }
 

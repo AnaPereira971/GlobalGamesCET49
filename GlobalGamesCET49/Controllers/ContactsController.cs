@@ -54,15 +54,15 @@ namespace GlobalGamesCET49.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Address,City,PhoneNumber,Email,Message")] Contact contact)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Address,City,PhoneNumber,Email,Message")] Contact contacts)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(contact);
+                _context.Add(contacts);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(contact);
+            return View(contacts);
         }
 
         // GET: Contacts/Edit/5

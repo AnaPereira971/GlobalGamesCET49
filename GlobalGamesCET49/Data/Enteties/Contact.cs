@@ -8,9 +8,10 @@ namespace GlobalGamesCET49.Data.Enteties
 {
     public class Contact
     {
+        // Só são necessárias para o BUDGET FORM da página SERVICES as strings NAME, EMAIL, MESSAGE
         public int Id { get; set; }
 
-        [Display(Name = "First Name")]
+        [Display(Name = " Name")]
         public string FirstName { get; set; }
 
         [Display(Name = "Last Name")]
