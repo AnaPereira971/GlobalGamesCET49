@@ -13,6 +13,8 @@ namespace GlobalGamesCET49.Data
 
         public DbSet<Contact> Contacts { get; set; }
 
+        public DbSet<Registration> Registrations { get; set; }
+
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

@@ -1,0 +1,88 @@
+﻿@model GlobalGamesCET49.Data.Enteties.Registration
+
+@{
+    ViewData["Title"] = "Registrations";
+}
+
+
+<section id="main">
+    <div class="container">
+        <article id="main-col">
+            <h1 class="title">Registrations</h1>
+
+            <ul id="registrations">
+                <li>
+                    <h2>The new Virtual Game</h2>
+                    <h3>Lorem Ipsum</h3>
+                    <p>Pellentesque justo quam, tristique et ultrices ultricies, accumsan eget mauris. Pellentesque gravida, tortor vel varius elementum, velit neque convallis nisi, ut molestie odio ligula eu purus.</p><br>
+                    <p>Sign Up today!</p>
+                </li>
+            </ul>
+        </article>
+
+        <aside id="sidebar">
+            <div class="dark">
+                <h3>Registration Form</h3>
+
+                <form class="budget" asp-action="registration">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="text-danger">
+                        <label asp-for="FirstName">First Name</label><br>
+                        <input type="text" placeholder="First name" class="text-danger" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="LastName">Last Name</label><br>
+                        <input type="text" placeholder="Last name" class="text-danger" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Address">Address</label><br>
+                        <input type="text" placeholder="Adress" class="text-danger" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="City">City</label><br>
+                        <input type="text" placeholder="City" class="text-danger" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="IdCard">Id Card</label><br>
+                        <input type="text" placeholder="Insert your Id Card number" class="text-danger" />
+                        <span asp-validation-for="IdCard" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="BirthDate">Birth Date</label><br>
+                        <input type="text" placeholder="Insert your Birth Date" class="text-danger" />
+                        <span asp-validation-for="BirthDate" class="text-danger"></span>
+                    </div>
+
+                    <button class="button_1" type="submit">Submit</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+</section>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        document.querySelector('#registrations').className = 'selecionado';
+    </script>
+
+    <script>
+        const form = document.querySelector("#form");
+
+        Event();
+
+        function Event() {
+            form.addEventListener("submit", submit);
+        }
+
+        function submit(e) {
+            alert('Successful submission')
+        }
+
+    </script>
+}

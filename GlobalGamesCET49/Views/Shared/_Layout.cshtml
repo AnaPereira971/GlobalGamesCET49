@@ -6,10 +6,6 @@
     <meta name="Description" content="desenvolvimento de jogos e realidade virtual">
     <meta name="Keywords" content="realidade virtual, criamos jogos, desenvolvemos jogos">
     <title>GlobalGamesCET49 | @ViewData["Title"]</title>
-    @*
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    *@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/css/site.css" />
@@ -33,8 +29,8 @@
                     <li id="home"><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li id="about"><a asp-controller="Home" asp-action="About">About</a></li>
                     <li id="services"><a asp-controller="Home" asp-action="Services">Services</a></li>
+                    <li id="registrations"><a asp-controller="Home" asp-action="Registrations">Registrations</a></li>
                     @*
-                        Suspenção da visualização de contacts da barra menu 
                         <li id="contacts"><a asp-area="" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
                     *@
                 </ul>
@@ -58,12 +54,6 @@
         <p>GlobalGamesCET49, Copyright &copy; @DateTime.Now.Year</p>
     </footer>
 
-    @*
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    *@
-
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -84,6 +74,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+
 
     @RenderSection("Scripts", required: false)
 

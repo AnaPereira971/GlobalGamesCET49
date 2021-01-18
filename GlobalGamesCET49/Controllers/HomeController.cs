@@ -33,6 +33,11 @@ namespace GlobalGamesCET49.Controllers
         {
             return View();
         }
+
+        public IActionResult Registrations()
+        {
+            return View();
+        }
         
         public IActionResult Privacy()
         {
@@ -45,11 +50,25 @@ namespace GlobalGamesCET49.Controllers
         // O atributo ValidateAntiForgeryToken ajuda a evitar ataques de falsificação de solicitação entre sites  e requer uma instrução Html.AntiForgeryToken () 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Services([Bind("Id,FirstName,LastName, Adress, City, PhoneNumber, Email,Message")] Contact contacts)
+        public async Task<IActionResult> Registrations([Bind("Id,FirstName,LastName, Adress, City, PhoneNumber, Email,Message")] Contact contacts)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(contacts);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
+
+        // POST: Registrations form
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Services([Bind("Id,FirstName,LastName, Adress, City, IdCard, BirthDate")] Contact registrations)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(registrations);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
